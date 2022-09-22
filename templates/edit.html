@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Employee APP</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Employee Form</span>
+            </div>
+        </nav> <br>
+        <div class="container">
+            <form action="/updateData/{{data.id}}" method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter Name" value={{data.Name}}>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Enter Email" value={{data.Email}}>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Aadhar</label>
+                    <input type="number" name="aadhar" class="form-control" placeholder="Enter Aadhar" value={{data.Aadhar}}>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Department</label>
+                    <input type="number" name="dept" class="form-control" placeholder="Enter Department" value={{data.Department}}>
+                </div>
+                
+                <input type="submit" class="btn btn-primary" value="SUBMIT">
+            </form>
+           
+        </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+</html>
